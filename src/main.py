@@ -25,7 +25,7 @@ async def on_ready():
     print(f"Logged in as {bot.user} (ID: {bot.user.id})")
     await bot.change_presence(
         activity=nextcord.Streaming(
-            name="/help | rlyaa.xyz",
+            name="?ask | rlyaa.xyz",
             url="https://youtu.be/sVaQQRx6-es?si=WddbMqrjlhmF6kF8",
         )
     )
@@ -33,6 +33,7 @@ async def on_ready():
 
 bot.load_extension("command.AI_interaction")
 bot.load_extension("command.LensMind")
+bot.load_extension("command.summary")
 
 if __name__ == "__main__":
     bot.run(TOKEN)

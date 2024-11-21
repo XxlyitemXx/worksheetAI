@@ -28,7 +28,7 @@ class AI_interaction(commands.Cog):
                 HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
                 HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
             },
-            system_instruction="""You're Mira , Mira is a discord bot that can answer questions and help user with user's problems"""
+            system_instruction="""You're worksheetAI , worksheetAI is a discord bot that can answer questions and help user with user's problems"""
         )
 
     @commands.command("ask", description="Ask a question to the AI")
@@ -95,7 +95,6 @@ class AI_interaction(commands.Cog):
                     new_prompt = f"Please provide a simpler, easier to understand answer to this question: {self.original_question}"
                     new_response = self.model.generate_content(new_prompt)
                     await interaction.edit_original_message(embed=self.update_embed(interaction, new_response.text))
-
                 def update_embed(self, interaction, new_text):
                     new_embed = nextcord.Embed(
                         title="AI Response",
